@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/invitation_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="问题：天空为什么是蓝色的呢？"
+           android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#373837"
+            />
+        <TextView
+            android:id="@+id/invitation_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:text="       天空呈蓝色是因为大气层中离子的作用天空呈蓝色是因为大气层中天空呈蓝色是因为大气层中离子的作用天空呈蓝色是因为大气层中离子的作用天空呈蓝色是因为大气层中离子的作用离子的作用天空呈蓝色是因为大气层中离子的作用"
+            />
+        <ImageView
+            android:id="@+id/invitation_showimage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:layout_marginLeft="5dp"
+            />
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            >
+            <ImageView
+                android:id="@+id/image_share"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@mipmap/ic_btn_share"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="50dp"
+                />
+            <ImageView
+                android:id="@+id/image_dianzhang"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@mipmap/zhan_no_press"
+                android:scaleType="centerCrop"
+                />
+            <TextView
+                android:id="@+id/text_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="60dp"
+                />
+            <ImageView
+                android:id="@+id/image_comment"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@mipmap/comment"
+                android:layout_marginRight="30dp"
+                android:scaleType="centerCrop"
+                />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#dcdedc"
+            android:text="热门评论："
+            android:padding="3dp"
+            android:textColor="#1d1d1d"
+            />
+
+
+</LinearLayout>

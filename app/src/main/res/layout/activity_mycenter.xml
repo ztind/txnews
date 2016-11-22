@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:id="@+id/appbar"
+        >
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:collapsedTitleGravity="center"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@mipmap/bj_icon"
+                android:fitsSystemWindows="true"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="parallax"
+                />
+            <!-- 注意Toolbar的高度要设置为"?attr/actionBarSize"，否则
+            CollapsingToolbarLayout用代码设置的文字显示不出来，错，toolbar里无控件即可显示-->
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/mycenter_toobar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:navigationIcon="@mipmap/ic_back_u"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                >
+                <TextView
+                    android:id="@+id/mycenter_editmessage_text"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:scaleType="centerCrop"
+                    android:drawableTop="@mipmap/modify_icon"
+                    android:text="编辑"
+                    android:layout_gravity="end"
+                    android:textSize="8sp"
+                    android:textColor="#d7d0d0"
+                    android:gravity="center"
+                    android:layout_marginRight="10dp"
+                    />
+            </android.support.v7.widget.Toolbar>
+            <com.github.siyamed.shapeimageview.CircularImageView
+                android:id="@+id/mycenter_photo"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@mipmap/icon"
+                android:layout_gravity="center"
+                android:fitsSystemWindows="true"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.01"
+                />
+            <TextView
+                android:id="@+id/mycenter_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="未登录"
+                android:textColor="#6ae96a"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                app:layout_collapseMode="parallax"
+                />
+            <TextView
+                android:id="@+id/mycenter_motto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="***我的个性签名***"
+                android:textColor="#6ae96a"
+                android:layout_gravity="center"
+                android:layout_marginTop="70dp"
+                app:layout_collapseMode="parallax"
+                />
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <!-- app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    让TabLayou显示在AppBarLayout下面-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:nestedScrollingEnabled="true"
+            >
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/mycenter_tablayout"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="#e1ee895a"
+                android:nestedScrollingEnabled="true"
+                />
+            <android.support.v4.view.ViewPager
+                android:layout_below="@+id/mycenter_tablayout"
+                android:id="@+id/mycenter_viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/mycenter_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="157dp"
+
+                android:src="@mipmap/icon_send"
+                app:backgroundTint="#e16ae2ed"
+                app:borderWidth="0dp"
+                android:layout_alignTop="@+id/mycenter_viewpager"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="31dp"
+                android:layout_marginEnd="31dp" />
+        </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

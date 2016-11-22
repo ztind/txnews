@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <!-- 注意design框架会把有颜色的图标颜色去除。待解决。。。
+      navigationView.setItemIconTintList(null);方法解决
+    -->
+    <group android:checkableBehavior="single">
+
+        <item android:title="欢笑论坛"
+            android:icon="@mipmap/lt_icon"
+            android:id="@+id/item_luentan" />
+        <item android:title="我的主页"
+            android:icon="@mipmap/touxian_icoon"
+            android:id="@+id/item_mycenter"
+            />
+        <item android:title="设置"
+            android:icon="@mipmap/set"
+            android:id="@+id/item_setting"
+           />
+    </group>
+
+    <item android:title="其他">
+        <menu >
+            <item android:title="应用商店"
+                android:id="@+id/item_yule"
+                android:icon="@mipmap/game_sb_icon"/>
+            <item android:title="退出应用"
+                android:icon="@mipmap/exit_icon"
+                android:id="@+id/item_exit"/>
+        </menu>
+    </item>
+
+</menu>

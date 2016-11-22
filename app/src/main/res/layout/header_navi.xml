@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:background="@mipmap/left_back_head"
+    android:layout_height="wrap_content">
+
+    <com.github.siyamed.shapeimageview.CircularImageView
+        android:id="@+id/user_head"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:src="@mipmap/icon"
+        android:scaleType="centerCrop"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        />
+    <TextView
+        android:id="@+id/user_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="big blue ocaen"
+        android:textSize="17sp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/user_head"
+        android:layout_marginTop="10dp"
+        android:textColor="#05e353"
+        />
+    <TextView
+        android:id="@+id/user_motto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="让我再看你一眼从南到北"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/user_nickname"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
+        android:textColor="#05e353"
+        />
+
+    <TextView
+        android:layout_below="@+id/user_motto"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#919191"
+        android:layout_marginTop="10dp"
+        />
+
+</RelativeLayout>

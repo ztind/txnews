@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.github.siyamed.shapeimageview.CircularImageView
+        android:id="@+id/forum_listview_item_photo"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/icon"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        />
+    <RelativeLayout
+        android:id="@+id/forum_listview_item_re"
+        android:layout_toRightOf="@+id/forum_listview_item_photo"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="5dp"
+        >
+        <TextView
+            android:id="@+id/forum_listview_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="小明"
+            android:lines="1"
+            android:padding="2dp"
+            android:textSize="15sp"
+            android:textColor="#eb9864"
+            />
+        <TextView
+            android:layout_below="@+id/forum_listview_item_name"
+            android:id="@+id/forum_listview_item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="为什么烈日的夏天天空是蓝色的为什么烈日的夏天天空是蓝色的"
+            android:lines="1"
+            android:padding="5dp"
+            android:textColor="#373837"
+            android:textSize="18sp"
+            />
+        <TextView
+            android:layout_below="@+id/forum_listview_item_title"
+            android:id="@+id/forum_listview_item_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:lines="3"
+            android:text="         因为啊哈哈哈为什么烈日的夏天天空是蓝哈哈为什么烈日的夏天天空是蓝哈哈为什么烈日的夏天天空是蓝因为啊哈哈哈为什么烈日的夏天天空是因为啊哈哈哈为什么烈日的夏天天空是蓝色的为什么烈日的夏天天空是蓝色的蓝色的为什么烈日的夏天天空是蓝色的色的为什么烈日的夏天天空是蓝色的"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

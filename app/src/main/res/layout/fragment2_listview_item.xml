@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.github.siyamed.shapeimageview.CircularImageView
+        android:id="@+id/fragment2_photo"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@mipmap/icon"
+        android:scaleType="centerCrop"
+        android:layout_margin="10dp"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        >
+        <TextView
+            android:id="@+id/fragment2_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:text="nickname"
+            android:textSize="20sp"
+            android:textColor="#f67157"
+            />
+        <TextView
+            android:id="@+id/fragment2_motto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="2"
+            android:textColor="#353635"
+            android:gravity="center"
+            />
+    </LinearLayout>
+
+</LinearLayout>

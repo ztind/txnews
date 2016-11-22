@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+        <com.github.siyamed.shapeimageview.CircularImageView
+            android:id="@+id/comment_list_photo"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/icon"
+            android:layout_margin="5dp"
+            />
+        <TextView
+            android:id="@+id/comment_liat_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="小明"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:textColor="#eb9864"
+            />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/comment_list_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="    今天的天气真的很好啊啊，哈哈哈哈今天的天气真的很好啊啊，哈哈哈哈今天的天气真的很好啊啊，哈哈哈哈今天的天气真的很好啊啊，哈哈哈哈今天的天气真的很好啊啊，哈哈哈哈今天的天气真的很好啊啊，哈哈哈哈今天的天气真的很好啊啊，哈哈哈哈今天的天气真的很好啊啊，哈哈哈哈今天的天气真的很好啊啊，哈哈哈哈"
+        android:textSize="18sp"
+        android:layout_margin="5dp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        >
+        <ImageView
+            android:id="@+id/comment_list_zangimage"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@mipmap/zhan_no_press"
+            />
+        <TextView
+            android:id="@+id/comment_list_zangcount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="30dp"
+            />
+        <ImageView
+            android:id="@+id/comment_list_commmentimage"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/comment"
+            android:layout_marginRight="30dp"
+            android:visibility="invisible"
+            />
+    </LinearLayout>
+    <com.zt.txnews.activity.FlowLayout
+        android:id="@+id/comment_list_flowlayout"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ></com.zt.txnews.activity.FlowLayout>
+
+</LinearLayout>

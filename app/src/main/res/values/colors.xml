@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //appbarLayout颜色
+    <color name="colorPrimary">#66deb4</color>
+    //5.0状态栏颜色
+    <color name="colorPrimaryDark">#66deb4</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="no_press">#ffffff</color>
+    <color name="press">#c7c2c2</color>
+
+    <color name="no_press_text">#8cceed</color>
+    <color name="press_text">#22b8ee</color>
+    <color name="bj">#eca878</color>
+
+</resources>

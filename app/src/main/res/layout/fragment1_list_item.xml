@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:id="@+id/fragment1_list_item_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:textSize="15sp"
+            android:textColor="#222422"
+            android:text="哈哈哈5151511515115哈哈哈15115哈哈哈51哈哈哈5151511515115"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/fragment1_list_item_love_image"
+            android:layout_toStartOf="@+id/fragment1_list_item_love_image" />
+        <ImageView
+            android:id="@+id/fragment1_list_item_love_image"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/zhan_press"
+            android:layout_marginRight="5dp"
+            android:layout_alignTop="@+id/fragment1_list_item_zangcount_text"
+            android:layout_toLeftOf="@+id/fragment1_list_item_zangcount_text"
+            android:layout_toStartOf="@+id/fragment1_list_item_zangcount_text" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/fragment1_list_item_zangcount_text" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_margin="5dp"
+        android:id="@+id/fragment1_list_item_content_text"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lines="4"
+        android:text="       内容"
+        android:textColor="#3e403e"
+        />
+    <TextView
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/fragment1_list_item_time_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:text="2016-9-21 21:26:00"
+        android:layout_gravity="end"
+        />
+
+</LinearLayout>

@@ -1,0 +1,54 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "24.0.0"
+
+    defaultConfig {
+        applicationId "com.zt.txnews"
+        minSdkVersion 11
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets { main {
+                    jni.srcDirs = []
+                }
+    }
+}
+//验证码
+repositories{
+    flatDir{
+        dirs 'libs' //就是你放aar的目录地址
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:design:24.0.0-beta1'
+    compile files('libs/juhe_sdk_v_2_7.jar')
+    //手工加入
+    compile project(':library')
+    compile files('libs/picasso-2.5.2.jar')
+    compile project(':librarypullrefrefs')
+    compile name: 'SMSSDK-2.0.2', ext: 'aar'
+    compile files('libs/okhttp-2.4.0.jar')
+    compile 'com.squareup.okio:okio:1.4.0'
+    compile files('libs/org.apache.http.legacy.jar')
+    compile 'com.android.support:support-v4:23.2.1'
+    compile files('libs/MobTools-2016.0830.1940.jar')
+    compile files('libs/MobCommons-2016.0830.1940.jar')
+    compile files('libs/ShareSDK-Core-2.7.7.jar')
+    compile files('libs/ShareSDK-QQ-2.7.7.jar')
+    compile files('libs/ShareSDK-Wechat-2.7.7.jar')
+    compile files('libs/ShareSDK-Wechat-Core-2.7.7.jar')
+    compile files('libs/ShareSDK-Wechat-Moments-2.7.7.jar')
+    compile files('libs/AppOffer_2.4.6_src1581.jar')
+}
