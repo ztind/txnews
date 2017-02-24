@@ -1,4 +1,4 @@
-package com.zt.txnews.fragment;
+﻿package com.zt.txnews.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,6 +13,7 @@ import android.widget.RelativeLayout;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.zt.txnews.R;
 import com.zt.txnews.newsdata.NewsDate;
+
 
 /**
  * Created by Administrator on 2016/9/9.
