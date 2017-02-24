@@ -1,4 +1,4 @@
-﻿package com.zt.txnews.fragment;
+package com.zt.txnews.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
