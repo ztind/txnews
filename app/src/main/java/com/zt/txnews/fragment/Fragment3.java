@@ -55,6 +55,6 @@ public class Fragment3 extends Fragment {
         pullToRefreshListView = (PullToRefreshListView) view.findViewById(R.id.pulltorefresh);
 
         NewsDate newsDate = new NewsDate(getActivity(),"yule",progressBar,relativeLayout,updateBut,pullToRefreshListView);
-        newsDate.getNewsByCategory();
+        newsDate.requestJuheServiceGetData();
     }
 }

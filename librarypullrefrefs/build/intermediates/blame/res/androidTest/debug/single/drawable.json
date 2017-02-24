@@ -4,6 +4,14 @@
         "source": "D:\\Android Studio Project MySelf App\\txnews\\librarypullrefrefs\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_bottom.xml"
     },
     {
+        "merged": "C:\\Users\\Administrator\\Desktop\\txnews\\librarypullrefrefs\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_bottom.xml",
+        "source": "C:\\Users\\Administrator\\Desktop\\txnews\\librarypullrefrefs\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\Desktop\\txnews\\librarypullrefrefs\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_top.xml",
+        "source": "C:\\Users\\Administrator\\Desktop\\txnews\\librarypullrefrefs\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_top.xml"
+    },
+    {
         "merged": "D:\\Android Studio Project MySelf App\\txnews\\librarypullrefrefs\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_top.xml",
         "source": "D:\\Android Studio Project MySelf App\\txnews\\librarypullrefrefs\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_top.xml"
     }

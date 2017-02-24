@@ -52,6 +52,6 @@ public class Fragment7 extends Fragment {
         pullToRefreshListView = (PullToRefreshListView) view.findViewById(R.id.pulltorefresh);
 
         NewsDate newsDate = new NewsDate(getActivity(),"junshi",progressBar,relativeLayout,updateBut,pullToRefreshListView);
-        newsDate.getNewsByCategory();
+        newsDate.requestJuheServiceGetData();
     }
 }

@@ -5,14 +5,16 @@ package com.zt.txnews.bean;
  * 新闻对象类
  */
 public class News {
-    private String title;
-    private String updateTime;
-    private String authorName;
-    private String picUrl;
-    private String url;
+    public String title;
+    public String updateTime;
+    public String authorName;
+    public String picUrl;
+    public String url;
 
+    public News() {
+    }
 
-    public News( String title, String updateTime, String authorName, String picUrl, String url) {
+    public News(String title, String updateTime, String authorName, String picUrl, String url) {
 
         this.title = title;
         this.updateTime = updateTime;

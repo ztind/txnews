@@ -2,7 +2,6 @@ package com.zt.txnews.activity;
 
 import android.app.Application;
 
-import com.thinkland.sdk.android.JuheSDKInitializer;
 
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.BmobConfig;
@@ -16,8 +15,7 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        //初始化JUhe SDK
-        JuheSDKInitializer.initialize(getApplicationContext());
+
         //设置BmobConfig
         BmobConfig config =new BmobConfig.Builder()
                 //请求超时时间（单位为秒）：默认15s
