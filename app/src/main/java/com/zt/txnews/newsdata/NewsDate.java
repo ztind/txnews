@@ -2,7 +2,6 @@ package com.zt.txnews.newsdata;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -13,17 +12,16 @@ import android.widget.RelativeLayout;
 import com.handmark.pulltorefresh.library.ILoadingLayout;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
-import com.thinkland.sdk.android.DataCallBack;
-import com.thinkland.sdk.android.JuheData;
-import com.thinkland.sdk.android.Parameters;
 import com.zt.txnews.activity.NewsMessageActivity;
 import com.zt.txnews.adapter.ListViewAdapter;
 import com.zt.txnews.bean.News;
+import com.zt.txnews.http.OkHttpManager;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,7 +55,7 @@ public class NewsDate {
         pullToRefreshListView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<ListView>() {
             @Override
             public void onRefresh(PullToRefreshBase<ListView> refreshView) {
-                getNewsByCategory(); //从新获取该类型的数据
+                requestJuheServiceGetData(); //从新获取该类型的数据
             }
         });
         //设置下啦提示文本
@@ -65,66 +63,63 @@ public class NewsDate {
         proxy.setRefreshingLabel("正在玩命加载中...");
 
     }
-    //新闻头条
-    public  void getNewsByCategory() {
-        Parameters ps = new Parameters();
-        ps.add("type", category);
-        JuheData.executeWithAPI(context, 235, "http://v.juhe.cn/toutiao/index", JuheData.GET, ps, new MyCallBack());//开启一个线程去service获取数据，so 下面的可能会先执行
-    }
 
-    class MyCallBack implements DataCallBack{
-
-        @Override
-        public void onSuccess(int i, String s) {
-            try {
-                JSONObject jsonObject = new JSONObject(s);
-                String reason = jsonObject.getString("reason");
-                JSONObject result = jsonObject.getJSONObject("result");
-                JSONArray data = result.getJSONArray("data");
-                List<News>  myList = new ArrayList<>();  //News封装集合
-                News news=null;
-                for (int k = 0; k < data.length(); k++) {
-                    JSONObject item = data.getJSONObject(k);
-                    String title = item.getString("title");
-                    String updateTime = item.getString("date");
-                    String author_name = item.getString("author_name");
-                    String picUrl = item.getString("thumbnail_pic_s");
-                    String url = item.getString("url");
-//                    Log.v("TAG", k + "---" + item.toString() + "\n");
-                    news = new News(title, updateTime, author_name, picUrl, url);
-                    myList.add(news);
-                    /**
-                     * 在军事板块data.length()==40 循环到第32此时发现没有json对象就抛出异常so实则循环的了31次,so没有执行到showDataInUI(category, myList); so出现了显示不出军事页面的bug
-                     */
-                  if (category.equals("junshi") && myList.size()==31){
-                        break;
-                  }
+    //请求数据 请求示例：http://v.juhe.cn/toutiao/index?type=top&key=APPKEY
+    public void requestJuheServiceGetData(){
+        String url = "http://v.juhe.cn/toutiao/index?type="+category+"&key=aa86168aa79302580d8a91e57a0f9400";
+        OkHttpManager.getInstance().asyncJsonStringByURL(url, new OkHttpManager.Func1() {
+            @Override
+            public void onResponse(String jsonString) {
+                if(jsonString!=null){
+                    ArrayList<News> list = parseData(jsonString);
+                    showDataInUI(category,list);
                 }
-                //在拿到数据列表后直接去填从显示到UI控件上
-                showDataInUI(category, myList);
-            } catch (JSONException e) {
-                e.printStackTrace();
             }
-        }
-        @Override
-        public void onFinish() {}
-        @Override
-        public void onFailure(int i, String s, Throwable throwable) {
-            Log.v("TAG", i + "--" + throwable.getMessage());
-            if (i==30002){
+
+            @Override
+            public void onFailure(IOException exception) {
                 progressBar.setVisibility(View.GONE);
                 relativeLayout.setVisibility(View.VISIBLE);//显示网络链接
                 updateBut.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        getNewsByCategory(); //从新获取该类型的数据
+                        requestJuheServiceGetData(); //从新获取该类型的数据
                     }
                 });
+
                 if (pullToRefreshListView.isShown()){
                     pullToRefreshListView.onRefreshComplete();//关闭试图
                 }
             }
+        });
+    }
+    //解析json
+    protected ArrayList<News> parseData(String json) {
+        try {
+            if(json==null){
+                return null;
+            }
+            JSONObject jsonObject = new JSONObject(json);
+            JSONObject rs = jsonObject.getJSONObject("result");
+            JSONArray jsonArray = rs.getJSONArray("data");
+            ArrayList<News> newsDataList = new ArrayList<>();
+            for (int i=0;i<jsonArray.length();i++){
+                JSONObject jsonObj = jsonArray.getJSONObject(i);
+                News news = new News();
+                news.authorName = jsonObj.getString("author_name");
+                news.updateTime = jsonObj.getString("date");
+                news.title = jsonObj.getString("title");
+                news.url = jsonObj.getString("url");
+                if(jsonObj.has("thumbnail_pic_s")){
+                    news.picUrl = jsonObj.getString("thumbnail_pic_s");
+                }
+                newsDataList.add(news);
+            }
+            return newsDataList;
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
+        return null;
     }
 
     private void showDataInUI(String category, List<News> myList) {
