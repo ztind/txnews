@@ -1,4 +1,4 @@
-﻿package com.zt.txnews.newsdata;
+package com.zt.txnews.newsdata;
 import android.content.Context;
 import android.content.Intent;
 import android.view.View;
