@@ -74,7 +74,7 @@ public class NewsDate {
                         JSONObject object = new JSONObject(jsonString);
                         String result = object.getString("result");
                         int resultCode = object.getInt("resultcode");
-                        if(resultCode!=112){//没 超过每日可允许请求次数
+                        if(resultCode!=112){//没 超过每日可允许请求次数 100条
                             ArrayList<News> list = parseData(jsonString);
                             showDataInUI(category,list);
                         }
