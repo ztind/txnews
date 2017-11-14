@@ -70,8 +70,17 @@ public class NewsDate {
             @Override
             public void onResponse(String jsonString) {
                 if(jsonString!=null){
-                    ArrayList<News> list = parseData(jsonString);
-                    showDataInUI(category,list);
+                    try {
+                        JSONObject object = new JSONObject(jsonString);
+                        String result = object.getString("result");
+                        int resultCode = object.getInt("resultcode");
+                        if(resultCode!=112){//没 超过每日可允许请求次数
+                            ArrayList<News> list = parseData(jsonString);
+                            showDataInUI(category,list);
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
 
